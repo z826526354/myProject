@@ -39,7 +39,7 @@ $ git pull origin master
 生成 ssh 密钥公钥
 
 ```
-$ gitssh-keygen -t rsa
+$ git ssh-keygen -t rsa
 ```
 
 初始化并且生成一个文件
@@ -131,5 +131,36 @@ $ git diff --cache
 
 ```
 $ git diff <commit-id> <commit-id>
+```
+
+切换分支到 dev (切换分支前一定要保存)
+
+```
+$ git checkout dev
+```
+
+查看分支
+
+```
+$ git branch
+```
+
+创建新分支——dev
+
+```
+$ git branch dev
+```
+
+创建并切换分支到dev
+
+```
+$ git checkout -b dev
+```
+
+删除本地分支/删除远程分支
+
+```
+$ git branch -d <name>
+$ git push origin -d dev
 ```
 
