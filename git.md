@@ -184,15 +184,13 @@ $ git branch -d <name>
 $ git push origin -d dev
 ```
 
-克隆远程仓库到本地库。
-
-例如使用ssh方法：
+克隆远程仓库到本地使用ssh方法
 
 ```
 git clone git@github.com:xxx/xxx.git
 ```
 
-对需要删除的文件、文件夹进行如下操作:
+对需要删除的文件、文件夹进行如下操作
 
 ```
 $ git rm test.txt
