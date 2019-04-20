@@ -1,4 +1,4 @@
-# 远程仓库 —— github
+# 远程仓库 —— Github
 
 ## 版本控制系统(version control system简称VCS)
 
@@ -145,7 +145,7 @@ $ git checkout dev
 $ git branch
 ```
 
-创建新分支——dev
+创建新分支—— dev
 
 ```
 $ git branch dev
