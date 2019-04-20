@@ -60,3 +60,9 @@ $ git add git.md
 $ git status
 ```
 
+作为新版本存储到本地使3区一致
+
+```
+$ git commit -m 'add a P'
+```
+
