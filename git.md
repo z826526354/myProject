@@ -183,3 +183,21 @@ $ git pull origin master:dev
 $ git branch -d <name>
 $ git push origin -d dev
 ```
+
+克隆远程仓库到本地库。
+
+例如使用ssh方法：
+
+```
+git clone git@github.com:xxx/xxx.git
+```
+
+对需要删除的文件、文件夹进行如下操作:
+
+```
+$ git rm test.txt
+$ git rm -r test 
+$ git commit -m "remove test.txt"
+```
+
+![git111](C:\Users\Administrator\Desktop\git111.PNG)
