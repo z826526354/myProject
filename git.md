@@ -36,3 +36,27 @@ $ git remote add origin yourgithub
 $ git pull origin master
 ```
 
+生成 ssh 密钥公钥
+
+```
+$ gitssh-keygen -t rsa
+```
+
+初始化并且生成一个文件
+
+```
+$ git commit -m 'init and make a file'
+```
+
+将文件添加到暂存区当中
+
+```
+$ git add git.md
+```
+
+查看文件当前状态
+
+```
+$ git status
+```
+
