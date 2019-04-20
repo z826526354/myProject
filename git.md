@@ -198,5 +198,10 @@ $ git rm -r test
 $ git commit -m "remove test.txt"
 ```
 
-![git111](C:\Users\Administrator\Desktop\git111.PNG)
+git pull 每天上班时，进行代码拉取
 
+git push 每天下班时，进行代码提交
+
+git add .&git commit -m 每完成部分内容时进行提交
+
+ctrl + s 保存
