@@ -157,10 +157,24 @@ $ git branch dev
 $ git checkout -b dev
 ```
 
-合并分支dev
+合并分支 dev
 
 ```
 $ git merge dev
+```
+
+合并完成
+
+```
+$ git add .
+$ git commit -m 'merge'
+$ git push origin master
+```
+
+拉取master上的分支dev
+
+```
+$ git pull origin master:dev
 ```
 
 删除本地分支/删除远程分支
@@ -169,4 +183,3 @@ $ git merge dev
 $ git branch -d <name>
 $ git push origin -d dev
 ```
-
