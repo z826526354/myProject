@@ -60,9 +60,15 @@ $ git add git.md
 $ git status
 ```
 
-作为新版本存储到本地使3区一致
+作为新版本存储到本地使3区一致（工作目录， 暂存区， 本地仓库）
 
 ```
 $ git commit -m 'add a P'
+```
+
+添加到远程仓库上的master分支
+
+```
+$ git push origin master
 ```
 
