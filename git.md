@@ -72,3 +72,64 @@ $ git commit -m 'add a P'
 $ git push origin master
 ```
 
+查看版本号
+
+```
+$ git reflog
+```
+
+查看日记
+
+```
+$ git log <fileName>
+```
+
+回退到上个版本(针对3区)
+
+```
+$ git reset --hard HEAD^
+```
+
+切换到某个版本, 回退次数
+
+```
+$ git reset --hard ID
+$ git reset --hard HEAD~1
+```
+
+针对暂存区和本地仓库的回退
+
+```
+$ git reset --mixed HEAD~1
+```
+
+针对本地仓库的回退
+
+```
+$ git reset --soft HEAD~1
+```
+
+比较工作区与暂存区的区别
+
+```
+$ git diff
+```
+
+比较工作区与本地仓库中最近一次commit的内容
+
+```
+$ git diff HEAD
+```
+
+比较暂存区与本地版本库中最近一次commit的内容
+
+```
+$ git diff --cache
+```
+
+比较两个commit之间差异
+
+```
+$ git diff <commit-id> <commit-id>
+```
+
