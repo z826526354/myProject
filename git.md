@@ -157,6 +157,12 @@ $ git branch dev
 $ git checkout -b dev
 ```
 
+合并分支dev
+
+```
+$ git merge dev
+```
+
 删除本地分支/删除远程分支
 
 ```
