@@ -12,3 +12,5 @@
 
 #### [京东首页例子](https://z826526354.github.io/myProject/jingdongPage/jingdong.html)
 
+#### [用ajax模拟百度例子](https://z826526354.github.io/myProject/zhuzhu2/zhuzhu.html)
+
