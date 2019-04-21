@@ -1,0 +1,55 @@
+#location{
+	position: relative;
+}
+#location:hover{
+	background-color: #fff;
+	height: 31px;
+	border: 1px solid #ddd;
+	border-bottom: none;
+}
+#location:hover .itemList{
+	display: block;
+}
+#location img{
+	width: 16px;
+	height: 16px;
+	vertical-align: middle;
+}
+#location .itemList{
+	position: absolute;
+	border: 1px solid #ddd;
+	background-color: #fff;
+	padding: 10px;
+	display: none;
+	z-index: 100;
+	
+	margin-left: -1px;
+	box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+#location .itemList .item{
+	display: inline-block;
+	width: 70px;
+	padding: 10px;
+}
+#location .itemList .item a{
+	font-size: 12px;
+	color: #999;	
+}
+#location .item-name{
+	height: 30px;
+	line-height: 30px;
+	font-size: 12px;
+	color: #999;
+}
+#location .itemList .item a:hover{
+	color: #f10214;
+}
+#location .itemList .item:hover{
+	background-color: #ddd;
+}
+#location .itemList .item.nowActive{
+	background-color: #f10214;
+}
+#location .itemList .item.nowActive a{
+	color: #fff;
+}

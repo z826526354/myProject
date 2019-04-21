@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title><link rel="stylesheet" href="slider.css">
+	<style>
+		#swiper{
+			width: 500px;
+			height: 300px;
+			/*border: 1px solid #000;*/
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper" id="swiper"></div>
+	<script src="jquery-3.3.1.js"></script>
+	<script src="slider.js"></script>
+	<script>
+		$('#swiper').sliderImg({
+			image:['img/1.jpg','img/2.jpg','img/3.jpg'],
+			interVal:2000
+		});
+	</script>
+</body>
+</html>
