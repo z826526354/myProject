@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta content="" name="keywords">
+	<meta content="" name="description">
+	<title>猪猪一下，你就知道</title>
+	<link rel="icon" href="./bitbug_favicon (1).ico" type="favicon.ico">
+	<link rel="stylesheet" href="./demo.css">
+</head>
+<body>
+	<div class="wrapper">
+		<div class="slide">
+			<p>这是一个模仿百度的小demo</p>
+			<span class="cool"></span>
+		</div>
+		<div class="pp" title="抓你屁屁"></div>
+		<form class="form">
+			<span class="left">
+				<input class="search" type="text">
+			</span>
+			<span class="right">
+				<a class="sear" href="javascript:void(0)" target="_black">猪猪一下</a>
+			</span>
+			<ul class="list"></ul>
+		</form>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+	<script>
+		var timer = null;
+		var oDiv = document.getElementsByClassName('slide')[0];
+		oDiv.onmouseenter = function () {
+			starMove(this, 0, 30);
+		}
+		oDiv.onmouseleave = function () {
+			starMove(this, -400, 30);
+		}			
+		var oInput = document.getElementsByTagName('input')[0];
+		var oUl = document.getElementsByTagName('ul')[0];
+		var sear = $('.sear');
+		oInput.oninput = function () {
+			var value = this.value;
+			console.log(value);
+			var oScript = document.createElement('script');
+			oScript.src = 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=' + value + '&cb=doJson';
+			document.body.appendChild(oScript);
+			document.body.removeChild(oScript);
+			sear.attr('href','https://www.baidu.com/s?ie=utf-8&f=3&rsv_bp=1&rsv_idx=1&tn=baidu&wd='+ value +'&cb=doJson');
+		}
+		function doJson(data) {
+			// console.log(data);
+			var s = data.s; // data的数组——百度返回给我们的数组。
+			var str = '';
+			if (s.length > 0) {
+				s.forEach(function (ele, index) {
+					str += '<li><a href="https://www.baidu.com/s?ie=utf-8&f=3&rsv_bp=1&rsv_idx=1&tn=baidu&wd='+ ele +'" target="_black">'+ ele +'</a></li>';
+				})
+				oUl.innerHTML = str;
+				oUl.style.display = 'block';
+			}else{
+				oUl.style.display = 'none';
+			}
+			
+		}
+
+		$('.pp').on('mousedown', function (e) {
+			var leftX, topY ;            
+			var x = e.pageX;
+			var y = e.pageY;
+			var left = parseInt($('.pp').css('left'));
+			var top = parseInt($('.pp').css('top'));
+			leftX = x - left;
+			topY = y - top;
+			$('body').on('mousemove', function (e) {
+				var x = e.pageX;
+				var y = e.pageY;
+				$('.pp').css({
+					'left': x - leftX + 'px',
+					'top': y - topY + 'px',
+				})
+			}).on('mouseup', function () {
+				$('body').off('mousemove');
+			})
+		})
+				
+		
+		function starMove(dom, target, timee) {
+			clearInterval(timer);
+			var iSpeed = null;
+			timer = setInterval(function () {
+				iSpeed = (target - dom.offsetLeft)/7;
+				console.log(dom.offsetLeft);
+				iSpeed = iSpeed > 0 ? Math.ceil(iSpeed) : Math.floor(iSpeed);// 精华
+				if (oDiv.offsetLeft == target) {
+					clearInterval(timer);
+				}else {
+					dom.style.left = dom.offsetLeft + iSpeed + 'px';
+				}
+			}, timee);
+		}
+	</script>
+</body>
+</html>
