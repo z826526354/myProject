@@ -1,0 +1,27 @@
+[
+	{
+		"image": "/source/lihong.jpg",
+		"audio": "/source/王力宏 - 星光.mp3",
+		"song": "王力宏 - 星光",
+		"album": "《星光》",
+		"singer": "王力宏",
+		"duration": 260,
+		"isLike": true
+	},{
+		"image": "/source/lin.jpg",
+		"audio": "/source/林俊杰 - 爱情多恼河.mp3",
+		"song": "林俊杰 - 爱情多恼河",
+		"album": "《梦想的声音第三季》",
+		"singer": "林俊杰",
+		"duration": 273,
+		"isLike": true
+	},{
+		"image": "/source/wangfei.jpg",
+		"audio": "/source/王菲 - 流年.mp3",
+		"song": "王菲 - 流年",
+		"album": "《流年》",
+		"singer": "王菲",
+		"duration": 277,
+		"isLike": false
+	}
+]
