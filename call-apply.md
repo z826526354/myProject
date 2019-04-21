@@ -2,7 +2,7 @@
 
 #### call
 
-```
+```js
 Function.prototype.newCall = function () {
 	var ctx = arguments[0] || window;
 	ctx.fn = this;
@@ -20,7 +20,7 @@ join() 方法用于把数组中的所有元素放入一个字符串
 
 #### apply
 
-```
+```js
 Function.prototype.newApply = function (ctx, arr) {
 	var ctx = ctx || window;
 	ctx.fn = this;
