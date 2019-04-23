@@ -127,7 +127,9 @@ position:absolute / relative / fixed;
 定位		 
 
 absolute——脱离原来位置相对于有定位的父级定位，没有则相对于窗口定位
+
 relative——相对于自身初始位置定位
+
 fixed—— 相对于窗口定位
 
 
@@ -182,9 +184,11 @@ span::after{
 单行文本溢出打点:
 
 ```css
-white-space: nowrap;
-overflow-hidden;
-text-overflow: ellipsis;
+div{
+   	white-space: nowrap;
+	overflow-hidden;
+	text-overflow: ellipsis;
+}
 ```
 
 
@@ -192,14 +196,18 @@ text-overflow: ellipsis;
 淘宝logo制作方法
 
 ```css
-width: 0;
-padding-top: 90px;
-overflow: hidden;
+div{
+    width: 0;
+	padding-top: 90px;
+	overflow: hidden;
+}
 ```
 
 标准盒模型变IE盒模型
 
 ```css
-box-sizing: border box;
+div{
+    box-sizing: border box;
+}
 ```
 
