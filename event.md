@@ -12,9 +12,9 @@ eventEmitter.prototype.on = function (eventname, callback) {
 	this.eventList[eventname].push(callback)
 }
 
-eventEmitter.prototype.emit = function (eventname) {
+eventEmitter.prototype.emit = function (eventname, ...arg) {
+    // ...arg ---- es6
 	var self = this;
-	var arg = Array.prototype.slice.call(arguments, 1);
 	console.log(arg)
 	var arr = this.eventList[eventname];
 	arr.forEach(function(item) {
