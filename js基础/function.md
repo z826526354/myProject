@@ -236,14 +236,14 @@ console.log(p2) // -> {name: "hsz", age: 23}
 
 ### JavaScript 中，调用函数有哪几种方式？
 
-- 方法调用模式	       `Foo.foo(arg1, arg2);`
+- 方法调用模式	 `Foo.foo(arg1, arg2);`
 
-- 函数调用模式           `foo(arg1, arg2);`
+- 函数调用模式         `foo(arg1, arg2);`
 
 - 构造器调用模式       `(new Foo())(arg1, arg2);`
 
 - call/apply 调用模式` Foo.foo.call(that, arg1, arg2);`
 
-  ​								  `Foo.foo.apply(that, [arg1, arg2]);`
+                     `Foo.foo.apply(that, [arg1, arg2]);`
 
-- bind 调用模式         ` Foo.foo.bind(that)(arg1, arg2)();`
+- bind 调用模式       ` Foo.foo.bind(that)(arg1, arg2)();`
