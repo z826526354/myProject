@@ -45,14 +45,14 @@ a();
 // a defined(定义) a.[[scope]] --> 0 : GO
 
 // a doing(执行)   a.[[scope]] --> 0 : a-AO
-//								  1 : GO
+//				   1 : GO
 
 // b defined(定义) b.[[scope]] --> 0 : a-AO
-//								  1 : GO
+//				   1 : GO
 
 // b doing(执行)   b.[[scope]] --> 0 : b-AO
-// 								  1 : a-AO
-//								  2 : GO
+// 				   1 : a-AO
+//				   2 : GO
 ```
 
 ![](./a.scope.PNG)
