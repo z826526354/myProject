@@ -1,0 +1,206 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+/*	font-size: 0;*/
+}
+html,body{
+	width: 100%;
+	height: 100%;
+	background-color: #c3c3c3;
+	/*overflow: hidden;*/
+}
+.wrapper{
+	width: 100vw;
+	height: 100vh;
+	background-color: #fff; 
+	box-sizing: border-box;
+}
+.con{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	/*background-color: orange;*/
+	background-color: #f2f2f2;
+	background-position: -60px 0px;
+}
+.wrapper .con .name{
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	color: #333;
+	font-weight: bolder;
+	background-color: #ddd;
+	font-family: arial;
+	font-size: 20px;
+}
+.wrapper .con .input-box{
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	bottom: 0;
+	width: 100%;
+	height: 50px;
+	background-color: #ddd;
+	white-space: nowrap;
+
+}
+.wrapper .con .input-box .inp{
+	margin-top: 10px;
+	width: 78%;
+	height: 30px;
+	outline: none;
+	border: none;
+	text-indent: 10px;
+	margin-left: 20px;
+}
+.wrapper .con .input-box .btn{
+	margin-top: 10px;
+	border: none;
+	outline: none;
+	width: 50px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	margin-right: 20px;
+	background-color: #33D821;
+	color: #fff;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.wrapper .con .input-box .btn:hover{
+	transition: all 0.5s; 
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+.wrapper .con .input-box .feeling{
+	margin: 8px 10px 0px 10px;
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	background-image: url('./微信截图_20181223214051.png');
+	position: relative;
+	bottom: -5px;
+}
+.chat-box{
+	width: 100%;
+	height: calc(100% - 120px);
+	/*border: 1px solid #000;*/
+	position: absolute;
+	top: 60px;
+	left: 0;
+	overflow-y: scroll;
+}
+.inner{
+	width: 90%;
+	/*border: 1px solid #000;*/
+	margin: 0 auto;
+}
+::-webkit-scrollbar{
+	width: 5px;
+	height: 20px;
+/*	background-color: #fff;*/
+}
+.talk{
+	width: 100%;
+	/*border: 1px solid #000;*/
+	line-height: 40px;
+	margin-bottom: 10px;
+}
+.talk div{
+	display: inline-block;
+	vertical-align: middle;
+}
+.me{
+	text-align: right;
+}
+.rabit{
+	text-align: left;
+}
+.talk.me .user{
+	float: right;
+	background-image: url('./QQ图片20181223220339.jpg'); 
+}
+/*.talk.me .user::after{
+	display: block;
+	content: "";
+	clear: both;
+}*/
+.talk.rabit .user{
+	background-image: url('./QQ图片20180606223051.jpg'); 
+}
+.talk .user{
+	width: 40px;
+	height: 40px;
+	background-size: cover;
+}
+.talk .text{
+	max-width: 230px;
+	border-radius: 5px;
+	padding: 0 10px;
+	margin: 0 15px;
+	font-size: 14px;
+	position: relative;
+}
+.talk.me .text{
+	background-color:#4FC91F;
+}
+.talk.rabit .text{
+	background-color: #fff;
+}
+.talk.me .text::after{
+	display: block;
+	content: "";
+	width: 0;
+	height: 0;
+	border: 8px solid transparent;
+	border-left: 8px solid #4FC91F;
+	position: absolute;
+	right: -16px;
+	top: 25%;
+}
+.talk.rabit .text::before{
+	display: block;
+	content: "";
+	width: 0;
+	height: 0;
+	border: 8px solid transparent;
+	border-right: 8px solid #fff;
+	position: absolute;
+	left: -16px;
+	top: 25%;
+}
+@media screen and (max-width: 400px) {
+	.wrapper .chat-box{
+		width: 94vw;
+		margin-left: 8px;
+	}
+	.inner{
+		width: 100%;
+		/*border: 1px solid #000;*/
+		margin: 0 auto;
+	}
+	.wrapper .con .input-box{
+		width: 100vw;
+		height: 8vh;
+	}
+	.wrapper .con .input-box .inp{
+		margin-top: 10px;
+	}
+	.wrapper .con .input-box .btn{
+		margin-top: 10px;
+	}
+	.wrapper .con .input-box .feeling{
+		background-position: -3px 0px;
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+	.wrapper .con .name{
+		height: 55px;
+		line-height: 55px;
+	}
+}
