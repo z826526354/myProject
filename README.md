@@ -8,6 +8,8 @@
 
 #### [html4, html5的常见问题](https://github.com/z826526354/myProject/blob/master/html.md)
 
+#### [meta标签也有大学问](https://github.com/z826526354/myProject/blob/master/meta.md)
+
 #### [gulp4.0 配置](https://github.com/z826526354/myProject/blob/master/gulp4.0.md)
 
 #### [京东首页例子](https://z826526354.github.io/myProject/jingdongPage/jingdong.html)
