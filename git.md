@@ -198,6 +198,15 @@ $ git rm -r test
 $ git commit -m "remove test.txt"
 ```
 
+```
+如果想放弃本地的文件修改，可以使用
+git reset --hard FETCH_HEAD，FETCH_HEAD
+表示上一次成功git pull之后形成的commit点。然后git pull.
+
+注意：
+git merge会形成MERGE-HEAD(FETCH-HEAD) 。git push会形成HEAD这样的引用。HEAD代表本地最近成功push后形成的引用。
+```
+
 git pull 每天上班时，进行代码拉取
 
 git push 每天下班时，进行代码提交
