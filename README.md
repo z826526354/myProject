@@ -8,11 +8,13 @@
 
 #### [git常用命令](https://github.com/z826526354/myProject/blob/master/git.md)
 
+#### [html](https://github.com/z826526354/myProject/tree/master/html)
+
 #### [js基础](https://github.com/z826526354/myProject/tree/master/js基础)
 
-#### [函数体现的一些思想](https://github.com/z826526354/myProject/tree/master/js基础)
+#### [CSS(层叠样式表)](https://github.com/z826526354/myProject/tree/master/css)
 
-#### [html](https://github.com/z826526354/myProject/tree/master/html)
+#### [函数体现的一些思想](https://github.com/z826526354/myProject/tree/master/js基础)
 
 #### [gulp4.0 配置](https://github.com/z826526354/myProject/blob/master/gulp4.0.md)
 
@@ -23,8 +25,6 @@
 #### [gulp&zeptojs的音乐播放器](https://z826526354.github.io/myProject/music/html/index.html)
 
 #### [bootstrap的兼容性例子](https://z826526354.github.io/myProject/bootstrapPage/demo2.html)
-
-#### [CSS(层叠样式表)](https://github.com/z826526354/myProject/tree/master/css)
 
 #### [node之event事件 原理探究](https://github.com/z826526354/myProject/blob/master/event.md)
 
