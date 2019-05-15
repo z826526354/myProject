@@ -2,3 +2,5 @@
 
 #### [函数](https://github.com/z826526354/myProject/blob/master/js基础/function.md)
 
+#### [让call-apply原形毕露](https://github.com/z826526354/myProject/blob/master/js基础/call-apply.md)
+
