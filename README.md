@@ -8,7 +8,7 @@
 
 #### [git常用命令](https://github.com/z826526354/myProject/blob/master/git.md)
 
-#### [js基础]([https://github.com/z826526354/myProject/tree/master/js%E5%9F%BA%E7%A1%80](https://github.com/z826526354/myProject/tree/master/js基础))
+#### [js基础](https://github.com/z826526354/myProject/tree/master/js基础)
 
 #### [函数体现的一些思想](https://github.com/z826526354/myProject/tree/master/js基础)
 
