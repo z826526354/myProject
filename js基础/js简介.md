@@ -150,7 +150,7 @@ var arr = [1, 2];
    
    ![](./zhan3.PNG)
 
-8.  **js语句基本规则**
+ - #### js语句基本规则
 
    - 语句后面加分号结束 " ; "
 
@@ -164,7 +164,7 @@ var arr = [1, 2];
 
    - 书写格式要规范， " = + / - " 两遍呢都应该有空格
 
-9. **运算操作符**
+ - #### 运算操作符
 
    - 数学运算，字符串连接
 
@@ -213,7 +213,7 @@ var arr = [1, 2];
 
      
 
-10. **比较运算符**
+ - #### 比较运算符
 
      - " < " , " > " , " = " , " >= " , " <= " , "==" , " != " , " === " 
 
@@ -223,7 +223,7 @@ var arr = [1, 2];
        var a = '10' > '8'; // false
        ```
 
-11. **逻辑运算符**
+ - #### 逻辑运算符
 
     - " && " , " || " , " ! " —— 运算的结果为真实值
 
@@ -241,7 +241,8 @@ var arr = [1, 2];
 
 ### 条件语句循环语句
 
-12. **if语句** —— 括号里的条件为true就运行 "{}" 里面的
+ - #### if语句
+    —— 括号里的条件为true就运行 "{}" 里面的
 
     ```js
     if (1 > 0 && 2 > 0) {
@@ -257,9 +258,7 @@ var arr = [1, 2];
     }
     ```
 
-    
-
-13. **for循环**
+ - #### for循环
 
     ```js
     for ( var i = 0; i < 10; i++ ) {
@@ -294,7 +293,7 @@ var arr = [1, 2];
 
     
 
-14.  **while循环（简化版的for循环）**
+ - #### while循环（简化版的for循环）
 
     ```js
     var i = 0;
@@ -310,6 +309,7 @@ var arr = [1, 2];
     }
     // 两个一样的效果
     ```
+
 
 ##### 练习：
 
@@ -329,6 +329,7 @@ var arr = [1, 2];
 
     ```js
     var n = parseInt(window.prompt('input'));
+    // parseInt() 函数可解析一个字符串，并返回一个整数。
     var mul = 1;
     for (var i = 1; i <= n; i ++) {
     	mul *= i;
@@ -401,4 +402,28 @@ var arr = [1, 2];
     }
     ```
 
-    
+
+
+ - #### switch case， break， continue
+   
+   ```js
+   var data = window.prompt('input');
+   switch (data) {
+       case "monday":
+       case "wednesday":
+       case "thursday":
+       case "friday":
+           console.log('wroking');
+           break; 
+           
+       case "saturday":
+       case "sunday":
+           console.log('relaxing');
+           break;
+   }
+   ```
+   
+   **break ———— 终止循环（只要是循环就可以用，而且要写在循环里面）**
+   
+   **continue ——   终止本次循环，继续下次循环**
+
