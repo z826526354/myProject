@@ -11,7 +11,7 @@
 - 优点：借用别人的工厂生产函数
 
   ```js
-  // call的第一个参数是瑶改变的目标
+  // call的第一个参数是要改变的目标
   function Person1(name) {
       this.name = name
   }
