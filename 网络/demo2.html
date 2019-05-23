@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>猪猪一下，你就知道</title>
+	<link rel="icon" href="./img/bitbug_favicon (1).ico" type="favicon.ico">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+			text-decoration: none;
+		}
+		html, body{
+			height: 100%;
+			background-image: linear-gradient(#f2f2f2, #ff748c);
+		}
+		body{
+			position: relative;
+		}
+		.wrapper{
+			width: 900px;
+			height: 100%;
+			margin: 0 auto;
+		}
+		.nav{
+			margin: 0 auto;
+			width: 510px;
+		}
+		#inp{
+			width: 400px;
+			height: 35px;
+			border: 1px solid #d6d6d6;
+			border-radius: 3px;
+			margin-top: 40%;
+			text-indent: 10px;
+			font-size: 16px;
+			outline-color: #ff748c;
+		}
+		#btn{
+			width: 100px;
+			height: 35px;
+			line-height: 32px;
+			background-color: #69c;
+			border: 1px solid #69c;
+			color: #fff;
+			font-size: 16px;
+			border-radius: 2px;
+		}
+		#btn:hover{
+			box-shadow: 0px 0px 4px rgba(102, 153, 204, 0.9);
+			transition: all .5s;
+		}
+		#ul{
+			display: none;
+			width: 400px;
+			margin: 0 auto;
+			margin-left: 196px;
+			background-color: #fff;
+			box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.5);
+		}
+		#ul li{
+			width: 98%;
+			margin: 5px auto;
+			background-color: #fff;
+		}
+		#ul li a{
+			display: inline-block;
+			margin: 0 2% 0 ;
+			height: 30px;
+			line-height: 30px;
+			width: 100%;
+			color: #999;
+		}
+		#ul li a:hover{
+			color: #fff;
+		}
+		#ul li:hover{
+			background-color: #ff748c;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6)
+			color: #fff;
+			transition: all 0.5s;
+		}
+		.slide{
+			display: inline-block;
+			width: 260px;
+			height: 60px;
+			background-color: #FDD569;
+			position: absolute;
+			left: -260px;
+			top: 40%;
+		}
+		.slide .cool{
+			border: 30px solid transparent;;
+			border-left: 35px solid rgba(150, 90, 50,0.6);
+			position: absolute;
+			right: -65px;
+			top: 0;
+		}
+		.slide p{
+			display: inline-block;
+			text-align: center;
+			line-height: 60px;
+			margin-left: 5px;
+			font-size: 17px;
+			font-weight: border;
+			font-family: arial;
+			color: #523A0E;
+		}
+
+		#weather{
+			width: 510px;
+			margin: 0 auto;
+		}
+		#weather #position{
+			background-color: rgba(255, 255, 255, 0.6);
+			filter: blur(0.4px);
+			color: #5F5F5F;
+			position: absolute;
+			top: 0;
+			outline: none;
+			border-radius: 5px;
+			width: 100px;
+			height: 30px;
+		}
+		#tianqi{
+			position: absolute;
+			top: 35px;
+			width: 360px;
+			background-color: rgba(255, 255, 255, 0.6);
+			filter: blur(0.4px);
+			border-radius: 5px;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5)
+		}
+		#tianqi li{
+			width: 96%;
+		}
+		#tianqi li span{
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+			font-family: arial;
+			margin: auto 5px;
+		}
+		@media screen and (max-width: 400px){
+			.wrapper{
+				width: 100vw;
+				height: 100vh;
+			}
+			.nav{
+				width: 95vw;
+			}
+			#inp{
+				width: 60vw;
+				text-indent: 10px;
+				margin-top: 55%;
+			}
+			#ul{
+				margin-left: 10px;
+				width: 60vw;
+			}
+			.slide{
+				top: 60%;
+			}
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+
+		<div class="nav">
+			<input type="text" id="inp">
+			<input type="button" value="猪猪一下" id="btn">
+		</div>
+		<ul id="ul"></ul>
+		<div class="slide">
+			<p>这是模仿百度的例子</p>
+			<span class="cool"></span>
+			
+		</div>
+		<div id="weather">
+			<select name="city" id="position">
+				<option value="成都市">成都市</option>
+				<option value="广州市">广州市</option>
+				<option value="中山市">中山市</option>
+				<option value="阳泉市">阳泉市</option>
+			</select>
+			<ul id="tianqi"></ul>
+		</div>
+	</div>
+	<script>
+		var oInp = document.getElementById('inp');
+		var oUl = document.getElementById('ul');
+		var position = document.getElementById('position');
+		var oDiv = document.getElementsByClassName('slide')[0];
+		var tUl = document.getElementById('tianqi');
+		var timer = null;
+
+		position.addEventListener('change', function () {
+			var val = this.value;
+			console.log(val);
+			var oScript = document.createElement('script');
+
+			oScript.src = 'http://wthrcdn.etouch.cn/weather_mini?city=' + val + '&callback=weather'
+			document.body.appendChild(oScript);
+			document.body.removeChild(oScript);
+		})
+			
+		
+
+		oInp.oninput = function () {
+			var oBtn = document.getElementById('btn');
+			var val = this.value;
+			console.log(val);
+			var oScript = document.createElement('script');
+
+			oScript.src = 'https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=' + val + '&cb=doJson'
+			document.body.appendChild(oScript);
+			document.body.removeChild(oScript);
+			// 防止生成多个script标签
+			enter();
+			function toUrl() {
+				window.location.href = "https://www.baidu.com/s?ie=utf-8&wd=" + val;
+			}
+			function enter(e) {
+				document.onkeydown=function(e){	//对整个页面文档监听
+				 	var keyNum=window.event ? e.keyCode :e.which;		//获取被按下的键值
+					//判断如果用户按下了回车键（keycody=13）
+					if(keyNum==13){
+						toUrl();
+					}
+				}
+			}
+			oBtn.onclick = function () {
+				toUrl();
+			}
+		}
+
+		oInp.onblur = function () {
+			setTimeout(function () {
+				oUl.style.display = 'none';
+			}, 1000)
+			
+		}
+
+		oDiv.onmouseenter = function () {
+			starMove(this, 0, 30);
+		}
+		oDiv.onmouseleave = function () {
+			starMove(this, -260, 30);
+		}
+
+		// https://www.baidu.com/sugrec?ie=utf-8&prod=pc&wd=aabb&cb=aa
+
+		function doJson(data) {
+			var s = data.s;
+			var str = '';
+			if (s.length > 0) {
+				s.forEach(function (ele, index) {
+					str += '<li><a href="https://www.baidu.com/s?ie=utf-8&wd='+ ele +'" target="_black">'+ ele +'</a></li>';
+				})
+				oUl.innerHTML = str;
+				oUl.style.display = 'block';
+			}else {
+				oUl.style.display = 'none';
+			}
+		}
+		function weather(data) {
+			// 天气播报
+			var data = data.data;
+			var forecast = data.forecast;
+			var strt = '';
+			forecast.forEach(function (ele, index) {
+				console.log(ele)
+				strt += '<li>\
+				<span>' + ele.date + '</span>\
+				<span>' + ele.high + '</span>\
+				<span>' + ele.low + '</span>\
+				<span>' + ele.type + '</span>\
+				</li>'
+			})
+			tUl.innerHTML = strt;
+			tUl.style.display = 'block';
+		}
+		
+		// http://www.bejson.com/knownjson/webInterface/
+		function starMove(dom, target, timee) {			
+			clearInterval(timer);
+			var iSpeed = null;
+			timer = setInterval(function () {
+				iSpeed = (target - dom.offsetLeft)/7;
+				iSpeed = iSpeed > 0 ? Math.ceil(iSpeed) : Math.floor(iSpeed);// 精华
+				if (oDiv.offsetLeft == target) {
+					clearInterval(timer);
+				}else {
+					dom.style.left = dom.offsetLeft + iSpeed + 'px';
+				}
+			}, timee);
+		}
+	</script>
+</body>
+</html>

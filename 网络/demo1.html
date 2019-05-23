@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" name="username" id="username">
+        <input type="text" name="age" id="age">
+        <input type="submit" id="submit">
+    </form>
+    <ul id="ul"></ul>
+    <button id="btn">btn</button>
+    <script>
+        var ul = document.getElementById('ul');
+        var btn = document.getElementById('btn');
+        
+
+        function ajaxFun(method, url, data, callback, flag) {
+            var xhr = null;
+
+            if (window.XMLHttpRequest) {
+                xhr = new XMLHttpRequest();
+            }else {
+                xhr = new ActiveXObject('Microsoft.XMLHttp')
+                // 兼容IE
+            }
+            
+            method = method.toUpperCase();
+            // 兼容get/post大小写
+
+            if (method == 'GET') {
+                xhr.open('GET', url + '?' + data, flag);
+                xhr.send();
+            }else if (method == 'POST') {
+                xhr.open('POST', url, flag);
+                xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
+                xhr.send(data);
+                // 兼容 GET 和 POST 请求
+            }
+            
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+                    if (xhr.status == 200) {
+                        callback(xhr.responseText);
+                    }
+                }
+            }
+        }
+
+        function showList(data) {
+            var value = JSON.parse(data);
+            console.log(value);
+            var str = ' ';
+            value.forEach((ele, index) => {
+                str += '<li>' + ele.title + '---' + ele.date + '</li>';
+            });
+            ul.innerHTML = str;
+        }
+
+        function showPerson(data) {
+            alert(data)
+        }
+
+        submit.onclick = function (e) {
+            e.preventDefault();
+            var data = 'username=' + username.value + '&age' + age.value;
+            console.log(data)
+            ajaxFun('POST', './data/post.php', data, showPerson, true);
+        }
+
+        btn.onclick = function () {
+            ajaxFun('GET','./data/get.php', '', showList, true);
+        }
+        
+    </script>
+</body>
+</html>
