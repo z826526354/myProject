@@ -121,7 +121,7 @@
   3 Client端接受到ACK保温后也向Server端发送ACK报文，并分配资源，这样TCP链接就建立了
   ```
 
-  ![](./img/sanci.png)
+  ![](./img/sanci.PNG)
 
 - 四次挥手
 
@@ -139,7 +139,7 @@
   FIN : 关闭连接
   ```
 
-  ![](./img/sici.png)
+  ![](./img/sici.PNG)
 
 - TCP/UDP（传输层协议）
 
@@ -161,7 +161,7 @@
 
 - http（请求报文， 响应报文）通过报文进行沟通
 
-  ![](./img/request.png)
+  ![](./img/request.PNG)
 
   ```
   请求报文：
@@ -185,7 +185,7 @@
   	'Sign success'（注册成功）
   ```
 
-  ![](./img/response.png)
+  ![](./img/response.PNG)
 
 ```
 状态码      定义        说明
