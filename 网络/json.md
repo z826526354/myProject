@@ -2,7 +2,7 @@
 
 ### 解决跨域问题的几种方法
 
-示例
+#### [示例: 模仿百度](https://z826526354.github.io/myProject/网络/demo2.html)
 
 1 Flash（不做详细介绍）
 
