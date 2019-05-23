@@ -20,7 +20,7 @@
 
 #### [京东首页例子](https://z826526354.github.io/myProject/jingdongPage/jingdong.html)
 
-#### [用ajax模拟百度例子](https://z826526354.github.io/myProject/zhuzhu2/zhuzhu.html)
+#### [JSONP跨域模拟百度例子](https://z826526354.github.io/myProject/网络/demo2.html)
 
 #### [gulp&zeptojs的音乐播放器](https://z826526354.github.io/myProject/music/html/index.html)
 
