@@ -549,6 +549,17 @@ typeof (+'abc')  // number
 
 typeof(a);         // undefined  未定义的变量在typeof里面不报错
 typeof(typeof(a))  // "undefined"
+
+
+function myIsNaN(num) {
+    var ret = Number(num);
+    ret += "";
+    if (ret == "NaN") {
+    	return true; 
+    }else {
+        return false;
+    }
+}
 ```
 
 例子：
