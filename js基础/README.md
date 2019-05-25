@@ -8,5 +8,9 @@
 
 #### [让call-apply原形毕露](https://github.com/z826526354/myProject/blob/master/js基础/call-apply.md)
 
+#### [继承模式，命名空间](https://github.com/z826526354/myProject/blob/master/js基础/继承模式，命名空间.md)
+
 #### [this小知识](https://github.com/z826526354/myProject/blob/master/js基础/this.md)
+
+#### [数组](https://github.com/z826526354/myProject/blob/master/js基础/数组.md)
 
