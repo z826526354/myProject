@@ -169,15 +169,22 @@ b.say();             // "333"
   	this : {}
   }
   */
-  2.function print() {
+  ```
+  
+  2.
+  
+  ```js
+  function print() {
       console.log(foo);//undefined
       var foo = 2;
       console.log(foo);//2
       console.log(hello);//报错：hello is not defined
   }
-  
+  ```
   
   3.
+  
+  ```js
   function print() {
       var test; // 被覆盖
       test();
@@ -186,16 +193,22 @@ b.say();             // "333"
       }
   }
   print(); // 1
+  ```
   
   4 .
+  
+  ```js
   function print() {
       var x = 1;
       if (x == "1") {console.log("one")};
       if (x === "2") {console.log("two")};
   }
   print();//one
+  ```
   
   5.
+  
+  ```js
   function print() {
       var marty = {
           name : "marty",
@@ -213,8 +226,11 @@ b.say();             // "333"
       test3.printName(); // test3
   }
   print();
+  ```
   
   6 .
+  
+  ```
   var bar = {a : "002"};
   function print() {
       bar.a = 'a'; // 覆盖002
@@ -226,6 +242,10 @@ b.say();             // "333"
   }
   print()(); // a b
   ```
+  
+  
+  
+  
 
 
 
