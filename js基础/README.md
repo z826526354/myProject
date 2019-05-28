@@ -14,3 +14,5 @@
 
 #### [数组](https://github.com/z826526354/myProject/blob/master/js基础/数组.md)
 
+#### [try...catch,es5严格模式](https://github.com/z826526354/myProject/blob/master/js基础/try...catch,es5严格模式.md)
+
