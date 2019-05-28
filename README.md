@@ -14,7 +14,7 @@
 
 #### [CSS(层叠样式表)](https://github.com/z826526354/myProject/tree/master/css)
 
-#### [函数体现的一些思想](https://github.com/z826526354/myProject/tree/master/js基础)
+#### [函数体现的一些思想](https://github.com/z826526354/myProject/tree/master/组合函数.md)
 
 #### [gulp4.0 配置](https://github.com/z826526354/myProject/blob/master/gulp4.0.md)
 
