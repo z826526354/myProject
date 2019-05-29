@@ -17,4 +17,3 @@
 #### [try...catch,es5严格模式](https://github.com/z826526354/myProject/blob/master/js基础/try...catch,es5严格模式.md)
 
 #### [DOM 知识点](https://github.com/z826526354/myProject/blob/master/js基础/DOM.md)
-
