@@ -173,7 +173,8 @@ target="_black"——一个属性表示新的页面打开
 4.协议限定符（运行javascript代码）
 
 ```html
-<a href="javascript:;"></a>
+<a href="javascript:void(false);"></a>
+<a href="javascript:alert('a');"></a>
 ```
 
 
