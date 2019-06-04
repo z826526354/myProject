@@ -6,3 +6,4 @@
 
 #### [class](https://github.com/z826526354/myProject/tree/master/es6/class.md)
 
+#### [Set、Map](https://github.com/z826526354/myProject/tree/master/es6/Set、Map.md)
