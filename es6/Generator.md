@@ -154,5 +154,24 @@ readFile('./xxx/xxx.txt', 'utf-8').then((val) => {
 })
 ```
 
+当然这并不是我们想要的，依然还会有一个Co函数，我们想要像yield一样的形式，参数一个个往下传————于是出现了async awati
 
+事实上也是语法糖，而且更为人吃惊的是，try catch能够捕获到这个异步操作的错误
+
+```js
+async function read (url) {
+    try {
+        let val1 = await readFile(url);
+        let val2 = await readFile(val1);
+        let val3 = await readFile(val2);
+        return val3;
+    }catch (e) {
+        console.log(e);
+    }
+    
+}
+read('./xxx/xxx.txt').then((val) => {
+    console.log(val)
+})
+```
 
