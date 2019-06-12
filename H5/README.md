@@ -30,7 +30,7 @@
 
   Audio（声音播放）
 
-  [Video（视频播放）](https://github.com/z826526354/myProject/blob/master/H5/video.md)
+  [Video（视频播放）](https://github.com/z826526354/myProject/blob/master/H5/player.md)
 
   
 
