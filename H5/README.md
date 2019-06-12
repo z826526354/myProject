@@ -24,13 +24,13 @@
 
   语义化标签（一群类似div的功能）
 
-  canvas（画板）
+  [canvas（画板）](https://github.com/z826526354/myProject/blob/master/H5/canvas.md)
 
-  svg（画板）
+  [svg（画板）](https://github.com/z826526354/myProject/blob/master/H5/svg.md)
 
   Audio（声音播放）
 
-  Video（视频播放）
+  [Video（视频播放）](https://github.com/z826526354/myProject/blob/master/H5/video.md)
 
   
 

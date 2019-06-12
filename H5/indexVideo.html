@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.video_player{
+			position: relative;
+			width: 1000px;
+			height: 500px;
+			margin: 0 auto;
+			
+		}
+		
+		video {
+			position: absolute;
+			width: 1000px;
+			height: 500px;
+			top: 0;
+			left: 0;
+		}
+		.menu{
+			position: absolute;
+			width: 100%;
+			height: 50px;
+			background-color: rgba(0, 0, 0, 0.5);
+			bottom: 0;
+			opacity: 0; 
+			transition: opacity 0.5s;
+		}
+		.video_player:hover .menu{
+			opacity: 1; 
+		}
+		.play {
+			position: absolute;
+			width: 60px;
+			height: 30px;
+			border: 1px solid white;
+			border-radius: 8px;
+			cursor: pointer;
+			line-height: 30px;
+			text-align: center;
+			color: #fff;
+			margin-left: 20px;
+			top: 50%;
+			margin-top: -15px;
+			font-family: arial;
+			font-size: 14px;
+		}
+		.time{
+			position: absolute;
+			width: 60px;
+			height: 30px;
+			border-radius: 4px;
+			cursor: pointer;
+			line-height: 30px;
+			text-align: center;
+			color: #fff;
+			margin-left: 120px;
+			top: 50%;
+			margin-top: -15px;
+			font-family: arial;
+			font-size: 14px;
+		}
+		.progress_bar {
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			background-color: #ddd;
+			left: 0;
+			top: -2px;
+			transition: all 0.4s;
+		}
+		.progress_bar div{
+			position: absolute;
+			width: 0px;
+			height: 2px;
+			background-color: #f40;
+			left: 0;
+			top: 0px;
+			transition: all 0.4s;
+		}
+		.progress_bar i{
+			position: absolute;
+			width: 6px;
+			height: 6px;
+			border-radius: 3px;
+			background-color: #fff;
+			left: 0px;
+			top: -2px;
+			box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7);
+			transition: all 0.4s;
+		}
+
+		.progress_bar:hover div{
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+			transform: scaleY(2);
+		}
+		.progress_bar:hover i{
+			transform: scale(2);
+		}
+		.quick{
+			position: absolute;
+			width: 60px;
+			height: 30px;
+			border: 1px solid white;
+			border-radius: 8px;
+			cursor: pointer;
+			line-height: 30px;
+			text-align: center;
+			color: #fff;
+			margin-left: 400px;
+			top: 50%;
+			margin-top: -15px;
+			font-family: arial;
+			font-size: 14px;
+		}
+		.quick_list{
+			opacity: 0;
+			position: absolute;
+			width: 100px;
+			height: 120px;
+			background-color: rgba(0, 0, 0, 0.3);
+			left: 400px;
+			top: -120px;
+			color: white;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+			border-radius: 8px;
+			transition: opacity 0.4s;
+		}
+
+		.quick_list li {
+			width: 90%;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+			cursor: pointer;
+			list-style: none;
+		}
+		.quick_list li:hover{
+			color: #FF097B;
+		}
+		.volume_add,
+		.volume_cut{
+			position: absolute;
+			width: 60px;
+			height: 30px;
+			border: 1px solid white;
+			border-radius: 8px;
+			cursor: pointer;
+			line-height: 30px;
+			text-align: center;
+			color: #fff;
+			top: 50%;
+			margin-top: -15px;
+			font-family: arial;
+			font-size: 14px;
+		}
+		.volume_add{
+			left: 600px;
+		}
+		.volume_cut{
+			left: 690px;
+		}
+		.full_screen{
+			position: absolute;
+			width: 60px;
+			height: 30px;
+			border: 1px solid white;
+			border-radius: 8px;
+			cursor: pointer;
+			line-height: 30px;
+			text-align: center;
+			color: #fff;
+			top: 50%;
+			margin-top: -15px;
+			font-family: arial;
+			font-size: 14px;
+			right: 30px;
+		}
+		.normalScreen,
+		.fullScreen{
+			position: absolute;
+			width: 60px;
+			height: 30px;
+			border: 1px solid white;
+			border-radius: 8px;
+			cursor: pointer;
+			line-height: 30px;
+			text-align: center;
+			color: #fff;
+			top: 50%;
+			margin-top: -15px;
+			font-family: arial;
+			font-size: 14px;
+			right: 30px;
+		}
+	</style>
+</head>
+<body>
+	<div class="video_player">
+		<video src="https://valipl.cp31.ott.cibntv.net/697429684D64A71E2CA8D397E/03000801005CDA679AD7648003E88024EE5C95-ADC0-488D-8271-C146D515FD9E.mp4?ccode=0502&duration=985&expire=18000&psid=cd12ab1f1152fda0009a4f3c43947a39&ups_client_netip=b7062e0a&ups_ts=1560342900&ups_userid=&utid=N8l%2FFepJBGECAbcGLgr0XK37&vid=XMzU1NDM4NjczNg%3D%3D&vkey=A0bab25771cb5ed5b3b13c25b6a1668d4"></video>
+		<div class="menu">
+			<div class="play">播放</div>
+			<div class="time">0:00/0:00</div>
+			<div class="progress_bar">
+				<div></div>
+				<i></i>
+			</div>
+			<div class="quick">倍速</div>
+			<div class="quick_list">
+				<ul>
+					<li>正常</li>
+					<li>x1.25</li>
+					<li>x1.5</li>
+					<li>x2</li>
+				</ul>
+			</div>
+			<div class="volume_add">音量+</div>
+			<div class="volume_cut">音量-</div>
+			<div class="full_screen">全屏</div>
+		</div>
+	</div>
+	<script>
+		var videoPlayer = document.getElementsByClassName('video_player')[0];
+		var video = document.getElementsByTagName('video')[0];
+		var menu = document.getElementsByClassName('menu')[0];
+		var play = document.getElementsByClassName('play')[0];
+		var time = document.getElementsByClassName('time')[0];
+		var progressBar = document.getElementsByClassName('progress_bar')[0];
+		var quickList = document.getElementsByClassName('quick_list')[0];
+		var quick = document.getElementsByClassName('quick')[0];
+		var liList = quickList.getElementsByTagName('ul')[0].getElementsByTagName('li');
+		var volumeAdd = document.getElementsByClassName('volume_add')[0];
+		var volumeCut = document.getElementsByClassName('volume_cut')[0];
+		var fullScreen = document.getElementsByClassName('full_screen')[0];
+
+		play.onclick = function () {
+			if (video.paused) {
+				video.play();
+				play.innerHTML = "暂停";
+			}else {
+				video.pause();
+				play.innerHTML = "播放";
+			}
+		}
+
+		progressBar.onclick = function (e) {
+			var location = e.layerX;
+			var width = progressBar.clientWidth;
+			var targetTime = location / width * video.duration;
+			video.currentTime = targetTime;
+		}
+
+		setInterval(function () {
+			var total = video.duration;
+			var nowTime = video.currentTime;
+			time.innerHTML = parseInt(nowTime / 60) + ":" +parseInt(nowTime % 60) + "/" + parseInt(total / 60) + ":" +parseInt(total % 60);
+			var width = nowTime / total * progressBar.clientWidth;
+			progressBar.getElementsByTagName('div')[0].style.width = width + "px";
+			progressBar.getElementsByTagName('i')[0].style.left = width + "px";
+		}, 1000)
+
+		quick.onclick = function () {
+			quickList.style.opacity = "1"
+			for (var i = 0; i < liList.length; i++) {
+				liList[i].index = i;
+				liList[i].onclick = function () {
+					if (this.index == 0) {
+						// 正常
+						video.playbackRate = 1;
+						quick.innerHTML = "倍数"
+					}else if (this.index == 1) {
+						// 1.25
+						video.playbackRate = 1.25;
+						quick.innerHTML = "x1.25"
+					}else if (this.index == 2) {
+						// 1.5
+						video.playbackRate = 1.5;
+						quick.innerHTML = "x1.5"
+					}else{
+						// 2
+						video.playbackRate = 2;
+						quick.innerHTML = "x2"
+					}
+				}
+			}
+			quickList.onmouseleave = function () {
+				quickList.style.opacity = "0"
+			}
+		}
+
+		volumeAdd.onclick = function () {
+			video.volume = video.volume + 0.1 > 1 ? 1 : video.volume + 0.1;
+		}
+		volumeCut.onclick = function () {
+			video.volume = video.volume - 0.1 < 0 ? 0 : video.volume - 0.1;
+		}
+		fullScreen.onclick = function () {
+			quan();
+		}
+		function quan() {
+			var dom = document.documentElement;
+			var oldVpWidth = videoPlayer.style.width;
+			var oldVpHeight = videoPlayer.style.height;
+			var oldVWidth = video.style.width;
+			var oldVHeight = video.style.height;
+			dom.requestFullscreen();
+			videoPlayer.style.width = window.screen.width + "px";
+			videoPlayer.style.height = window.screen.height + "px";
+			video.style.width = window.screen.width + "px";
+			video.style.height = window.screen.height + "px";
+			fullScreen.innerHTML = "退出全屏"
+			fullScreen.className = "normalScreen";
+			var normalScreen = document.getElementsByClassName('normalScreen')[0];
+			normalScreen.onclick = function () {
+				videoPlayer.style.width = oldVpWidth;
+				videoPlayer.style.height = oldVpHeight;
+				video.style.width = oldVWidth;
+				video.style.height = oldVHeight;
+				normalScreen.innerHTML = "全屏"
+				normalScreen.className = "fullScreen";
+			}
+		}
+		
+	</script>
+</body>
+</html>
