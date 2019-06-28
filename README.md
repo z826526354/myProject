@@ -8,14 +8,11 @@
 
 #### [git常用命令](https://github.com/z826526354/myProject/blob/master/git.md)
 
-#### [html](https://github.com/z826526354/myProject/tree/master/html)
+#### [node之event事件 原理探究](https://github.com/z826526354/myProject/blob/master/event.md)
+
+#### [vue](https://github.com/z826526354/myProject/tree/master/vuejs)
 
 #### [HTML5](https://github.com/z826526354/myProject/tree/master/H5)
-
-
-#### [js基础](https://github.com/z826526354/myProject/tree/master/js基础)
-
-#### [CSS(层叠样式表)](https://github.com/z826526354/myProject/tree/master/css)
 
 #### [es6](https://github.com/z826526354/myProject/tree/master/es6)
 
@@ -23,15 +20,18 @@
 
 #### [gulp4.0 配置](https://github.com/z826526354/myProject/blob/master/gulp4.0.md)
 
-#### [京东首页例子](https://z826526354.github.io/myProject/jingdongPage/jingdong.html)
-
-#### [JSONP跨域模拟百度例子](https://z826526354.github.io/myProject/网络/demo2.html)
-
 #### [gulp&zeptojs的音乐播放器](https://z826526354.github.io/myProject/music/html/index.html)
+
+#### [京东首页例子](https://z826526354.github.io/myProject/jingdongPage/jingdong.html)
 
 #### [bootstrap的兼容性例子](https://z826526354.github.io/myProject/bootstrapPage/demo2.html)
 
-#### [node之event事件 原理探究](https://github.com/z826526354/myProject/blob/master/event.md)
+#### [JSONP跨域模拟百度例子](https://z826526354.github.io/myProject/网络/demo2.html)
 
 #### [网络部分](https://github.com/z826526354/myProject/tree/master/网络)
 
+#### [js基础](https://github.com/z826526354/myProject/tree/master/js基础)
+
+#### [html](https://github.com/z826526354/myProject/tree/master/html)
+
+#### [CSS(层叠样式表)](https://github.com/z826526354/myProject/tree/master/css)
