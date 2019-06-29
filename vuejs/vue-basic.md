@@ -42,6 +42,8 @@ vue是借鉴了Angularjs和reactjs的一些思想和优点的框架
 
 - 保证最小化的DOM操作，是的执行效率得到保证
 
+  模仿实现 h 函数
+  
   ```js
   function vEvement(tagName, prop, children) {
       if (!(this instanceof vEvement)) {
@@ -242,7 +244,7 @@ vm : View-model视图模型（vue主要实现的地方）
 
 
 
-生命周期图
+#### 生命周期图
 
 ![](https://cn.vuejs.org/images/lifecycle.png)
 

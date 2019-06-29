@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="./vue-example.css">
+	<script type="text/javascript" src="https://unpkg.com/vue@2.6.10/dist/vue.js"></script>
+</head>
+<body>
+	<header class="page_top">
+		<div class="page_content">
+			<h2>计划列表</h2>
+		</div>
+	</header>
+	<div class="main">
+		<h3 class="big_title">添加任务: </h3>
+		<input type="text" class="task_input" v-model="inputValue" v-on:keyup.enter="addToDo">
+		<ul class="tast_count">
+			<li>{{filterList}}个任务未完成</li>
+			<li class="action">
+				<a href="#all">所有任务</a>
+				<a href="#unfinish">未完成任务</a>
+				<a href="#finish">完成任务</a>
+			</li>
+		</ul>
+		<h3 class="big_title"></h3>
+		<div class="tasks">
+			<h3>任务列表： </h3>
+			<span class="no_task_tip" v-show="!list.length">未添加任何项目</span>
+			<ul class="todo_list">
+				<li class="list" v-for="item in filterCheck" :class="{completed:item.checked, editing:editingToDo === item}">
+					<div class="view">
+						<input type="checkbox" class="toggle" v-model="item.checked">
+						<!-- v-bind: 缩写为 冒号： -->
+						<label @dblclick="editToDo(item)">{{item.title}}</label>
+						<!-- 双击 @dblclick -->
+						<button class="destory"
+						@click="deleteToDo(item)">x</button>
+						<!-- v-on: 缩写为 @ -->
+					</div>
+					<input type="text" class="edit" v-focus="editingToDo === item" v-model="item.title"
+					@keyup.enter="editedToDo"
+					@blur="editedToDo"
+					@keyup.esc="cancelEdit(item)">
+				</li>
+			</ul>
+		</div>
+	</div>
+	<script src="./vue-example.js"></script>
+</body>
+</html>

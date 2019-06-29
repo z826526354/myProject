@@ -1,0 +1,161 @@
+*{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+html,body{
+	height: 100%;
+	background-color: #F8F8F8;
+}
+a{
+	color: #626262;
+	font-size: 14px;
+}
+
+header.page_top{
+	width: 100%;
+	height: 35px;
+	background-color: #4CD3B1;
+	border-bottom: 1px solid #ddd;
+}
+header.page_top .page_content{
+	width: 900px;
+	margin: 0 auto;
+}
+header.page_top h2{
+	color: #fff;
+}
+.main{
+	width: 900px;
+	margin: 0 auto;
+}
+.main h3{
+	width: 100%;
+	display: inline-block;
+	height: 60px;
+	line-height: 60px;
+}
+.main .task_input{
+	width: 100%;
+	height: 30px;
+}
+.main .tast_count{
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+.main .tast_count li{
+	height: 60px;
+	line-height: 60px;
+}
+.main .tast_count li:nth-of-type(1){
+	color: #f60;
+}
+
+.main .tast_count li a {
+	display: inline-block;
+	width: 100px;
+	height: 25px;
+	line-height: 25px;
+	border-radius: 5px;
+	background-color: #2BD9B1;
+	text-align: center;
+	color: #fff;
+	transition: all 0.4s;
+}
+
+.main .tast_count li a:hover {
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+	background-color: #f40;
+} 
+
+.main .tasks .no_task_tip{
+	display: inline-block;
+	height: 35px;
+	width: 100%;
+	background-color: #fff;
+	line-height: 35px;
+	/*border-bottom: 1px solid #ddd;*/
+	color: #626262;
+	font-size: 14px;
+	text-indent: 15px;
+}
+.main .tasks .todo_list{
+	width: 100%;
+}
+.main .tasks .todo_list .list{
+	position: relative;
+	height: 40px;
+	line-height: 40px;
+	background-color: #fff;
+	text-indent: 15px;
+	border-top: 1px solid #eee;
+}
+.main .tasks .todo_list .list:last{
+	border-bottom: none;
+}
+.main .tasks .todo_list input[type='checkbox']{
+	width: 20px;
+	height: 20px;
+	background-color: #fff;
+	-webkit-appearance:none;
+	border: 1px solid #c9c9c9;
+	border-radius: 10px;
+	outline: none;
+	vertical-align: -4px;
+}
+.main .tasks .todo_list label{
+	margin-left: 10px;
+}
+.main .tasks .todo_list input[type=checkbox]:checked{
+   background: #626262;
+}
+
+
+.main .tasks .todo_list li:hover,
+.main .tasks .todo_list li:hover button,
+.main .tasks .todo_list li:hover .edit{
+	background-color: #f8f8f8;
+	transition: all 0.5s;
+}
+.main .tasks .todo_list .completed label{
+	color: #aaa;
+	text-decoration:line-through;
+}
+.main .tasks .todo_list button{
+	font-size: 20px;
+	color: #f40;
+	font-weight: 700;
+	outline: none;
+	border: none;
+	background-color: #fff;
+	height: 40px;
+	line-height: 40px;
+	float: right;
+	margin-right: 10px;
+	width: 35px;
+}
+.main .tasks .todo_list .view{
+	display: block;
+}
+.main .tasks .todo_list .edit{
+	display: none;
+}
+.main .tasks .todo_list .editing .view{
+	display: none;
+}
+.main .tasks .todo_list .editing .edit{
+	display: block;
+}
+.main .tasks .todo_list .edit{
+	position: absolute;
+	top: 0;
+	left: 40px;
+	border: none;
+	background-color: #fff;
+	width: 700px;
+	height: 38px;
+	margin-left: 10px;
+	outline: none;
+}
