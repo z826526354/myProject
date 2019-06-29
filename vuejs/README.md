@@ -4,4 +4,5 @@
 
 #### [vue2](./vue-process.md)
 
-#### [演示](./demo/vue-example.html)
+#### [演示](https://z826526354.github.io/myProject/vuejs/demo/vue-example.html)
+
