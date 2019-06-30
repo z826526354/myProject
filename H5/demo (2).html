@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0
+		}
+		body{
+			position: relative;
+		}
+		#can {
+			/*定义canvas的可视范围*/
+			width: 500px;
+			height: 300px;
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+	<!-- <div style="position: absolute;
+			left: 200px;
+			top: 200px;
+			width: 100px;
+			height: 100px;
+			background-color: #5dbede;"></div> -->
+	<canvas id="can" width="500px" height="300px"></canvas>
+	<script>
+		var can = document.getElementById('can');
+		var ctx = can.getContext("2d");
+		// 在canvas上建立2d坐标系
+		var width = 500;
+		var height = 300;
+		var offset = 0;
+		var num = 0;
+		setInterval(() => {
+			ctx.clearRect(0, 0, 500, 300);
+			ctx.beginPath();
+
+			ctx.moveTo(0 + offset - 500, height / 2);
+			ctx.quadraticCurveTo(width / 4 + offset - 500, height / 2 + Math.sin(num) * 120, width / 2 + offset - 500, height / 2);
+
+			ctx.quadraticCurveTo(width / 4 * 3 + offset - 500, height / 2 - Math.sin(num) * 120, width + offset - 500, height / 2);
+
+			ctx.moveTo(0 + offset, height / 2);
+			ctx.quadraticCurveTo(width / 4 + offset, height / 2 + Math.sin(num) * 120, width / 2 + offset, height / 2);
+
+			ctx.quadraticCurveTo(width / 4 * 3 + offset, height / 2 - Math.sin(num) * 120, width + offset, height / 2);
+			ctx.stroke();
+			offset += 5;
+			offset %= 500;
+			num += 0.01;
+		}, 1000 / 30)
+
+
+
+
+		// let node3 = {
+		//     key : 'name3',
+		//     value : "3",
+		//     next : null
+		// };
+
+		// let node2 = {
+		//     key : 'name2',
+		//     value : "2",
+		//     next : node3
+		// };
+		// let node1 = {
+		//     key : 'name1',
+		//     value : "1",
+		//     next : node2
+		// };
+		
+		
+		// let oMap = new Map();
+		// oMap.set('name', 'hsz');
+		// let obj = {};
+		// oMap.set(obj, '----');
+		// oMap.set({}, '+++');
+		// for (let val of oMap) {
+		//     console.log(val[0], val[1]);
+		//     console.log(val)
+		// }
+
+
+		// var oS = new Set([1]);
+		// oS.add(1);
+		// oS.add([1, 2]);
+		// oS.add(true);
+		// console.log(oS);
+		// Set(3) {1, Array(2), true}
+
+
+		// var div = document.getElementsByTagName('div')[0];
+		// function drag(dom) {
+		// 	var e = e || window.event;
+		// 	var disX,
+		// 		disY;
+		// 	div.onmousedown = function (e) {
+		// 		disX = e.pageX - parseInt(dom.style.left);
+		// 		disY = e.pageY - parseInt(dom.style.top);
+		// 		document.onmousemove = function (e) {
+		// 			dom.style.left = e.pageX - disX + 'px';
+		// 			dom.style.top = e.pageY - disY + 'px';
+		// 		}
+		// 		div.onmouseup = function () {
+		// 			document.onmousemove = null;
+		// 		}
+		// 	}
+		// }
+		// drag(div)
+
+		// function _calssCallCheck(_this, _constructor) {
+		//     if (!(_this instanceof _constructor)) {
+		//         throw new TypeError("Cannot call a class as a function");
+		//     }
+		// }
+		// function Demo() {
+		// 	 _calssCallCheck(this, Demo);
+		// 	console.log("this is demo");
+		// }
+		// new Demo();
+		// Demo(); // 报错
+	</script>
+</body>
+</html>
