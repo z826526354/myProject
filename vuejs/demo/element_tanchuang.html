@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<!-- <link rel="stylesheet" href="./element.css"> -->
+	<!-- 引入样式 -->
+	<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+	<style>
+		#app .el-alert.is-dark{
+			margin-top: 10px;
+		}
+	</style>
+	<!-- 引入组件库 -->
+	<title>Document</title>
+</head>
+<body>
+	<div id="app">
+		<el-alert title="成功提示的文案"></el-alert>
+		<el-alert type="error"></el-alert>
+		<el-alert :show-closs="false"></el-alert>
+		<el-alert :show-icon="false"  @click_close="click_close" v-if="show_dom"></el-alert>
+		<el-alert>
+			<p>第1个p</p>
+			<p>第2个p</p>
+			<p>第3个p</p>
+		</el-alert>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+	<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+	<script>
+		Vue.component("el-alert", {
+			
+			template : `
+				<div role="alert" class="el-alert is-dark" :class="[alertClass]">
+					<i class="el-alert__icon" :class="[iconClass]" v-if="showIcon"></i>
+					<div class="el-alert__content">
+						<slot>
+							<span class="el-alert__title">{{title}}</span>
+						</slot>
+						<i class="el-alert__closebtn el-icon-close" v-if="showCloss" @click="click_handle"></i>
+					</div>
+				</div>
+			`,
+			props : {
+				title : {
+					type : String,
+					default : "我是一个提示文案"
+				},
+				type : {
+					type : String,
+					default : "info"
+				},
+				showCloss : {
+					type : Boolean,
+					default : true
+				},
+				showIcon : {
+					type : Boolean,
+					default : true
+				}
+				
+			},
+			computed : {
+				alertClass () {
+					// [] 一定渲染
+					// {xx: true} true渲染
+					return "el-alert--" + this.type
+				},
+				iconClass () {
+					return "el-icon-" + this.type
+				}
+			},
+			methods : {
+				click_handle() {
+					this.$emit("click_close")
+				}
+			}
+
+		})
+		new Vue({
+			el : "#app",
+			data : {
+				show_dom : true
+			},
+			methods : {
+				click_close () {
+					alert("ok, I know, thanks");
+					this.show_dom = false
+				}
+			}
+		})
+	</script>
+</body>
+</html>

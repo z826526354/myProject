@@ -40,6 +40,8 @@
 						@click="deleteToDo(item)">x</button>
 						<!-- v-on: 缩写为 @ -->
 					</div>
+
+					<!-- 自定义指令 -->
 					<input type="text" class="edit" v-focus="editingToDo === item" v-model="item.title"
 					@keyup.enter="editedToDo"
 					@blur="editedToDo"

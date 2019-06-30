@@ -91,14 +91,16 @@ var vm = new Vue({
 			this.editingToDo = ""
 		}
 	},
-	// 自定义组件
+
+	// 自定义指令
 	directives: {
 		focus: {
 			update (el, binding) {
-
 				if (binding.value) {
-					console.log(el)
-					el.focus()
+					console.log(el);
+					console.log(binding);
+					// 通过指令直接操作 dom
+					el.focus();
 				}
 			}
 		}
