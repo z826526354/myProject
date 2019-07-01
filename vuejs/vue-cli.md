@@ -95,7 +95,7 @@
   // 整个项目需要用到的引擎
   ```
 
-  ```json
+  ```txt
   "browserslist": [
       "> 1%", // 市场份额 > 1%
       "last 2 versions", // 最近的两个版本好使
@@ -106,7 +106,7 @@
 
   #### .babelrc文件(配置es6转es5的一些babel-loader)
 
-  ```json
+  ```txt
   "presets": [ // 预设
       // env——支持es5-7
       ["env", {
