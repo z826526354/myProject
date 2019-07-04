@@ -1,0 +1,31 @@
+<!--pages/warn/index.wxml-->
+<view class='container'>
+  <view class='choose'>
+    <view class='title'>请选择报障类型</view>
+    <checkbox-group class="choose-grids" bindchange="changeCheckbox">
+      <block wx:for="{{itemsValue}}" wx:key="{{item}}">
+        <view class='grid'>
+          <checkbox value='{{item.value}}' checked='{{item.checked}}'>{{item.value}}</checkbox>
+        </view>
+      </block>
+    </checkbox-group>
+  </view>
+  <view class="action">
+    <view class='title'>拍摄单车周围环境，便于维修师傅找车</view>
+    <view class='action-photo'>
+      <block wx:for="{{picUrls}}" wx:key="{{item}}">
+        <image src="{{item}}">
+          <icon type='cancel' size='18' color='red' bindtap='delPic' data-index='{{index}}'></icon>
+        </image>
+      </block>
+      <text class='add' bindtap='clickPhoto'>{{actionText}}</text>
+    </view>
+    <view class='action-input'>
+      <input name="number" placeholder='车牌号' bindtap='changeNumber'></input>
+      <input name="desc" placeholder='备注' bindtap='changeDes'></input>
+    </view>
+    <view class='action-submit'>
+      <button style='background-color:{{btnColor}}' bindtap='submit'>提交</button>
+    </view>
+  </view>
+</view>

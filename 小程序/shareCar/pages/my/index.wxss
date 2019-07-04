@@ -1,0 +1,43 @@
+/* pages/my/index.wxss */
+.container{
+  background-color: #f2f2f2;
+  width: 100%;
+  height: 100vh;
+}
+.user-info{
+  padding-top: 60rpx;
+  background-color: #fff;
+}
+.user-info .img{
+  height: 180rpx;
+  width: 180rpx;
+  border-radius: 50%;
+  margin: 30rpx auto 40rpx;
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.2);
+  overflow: hidden
+
+}
+.user-info .img image{
+  height: 100%;
+  width: 100%;
+}
+.user-info .user-name{
+  display: inline-block;
+  width: 100%;
+  padding: 30rpx 0;
+  text-align: center;
+}
+.my-wallet{
+  padding: 40rpx;
+  background-color: #fff;
+  margin-top: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+.btn-login{
+  width: 90%;
+  position: absolute;
+  bottom: 60rpx;
+  left: 5%;
+}

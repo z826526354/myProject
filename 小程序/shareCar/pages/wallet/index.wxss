@@ -1,0 +1,46 @@
+/* pages/wallet/index.wxss */
+.container{
+  width: 100%;
+  height: 100vh;
+  background-color: #f2f2f2;
+}
+.overage{
+  padding: 40rpx;
+  background-color: #fff;
+  text-align: center;
+}
+.overage .overage-header{
+  font-size: 30rpx;
+  padding-top: 20rpx 0;
+}
+.overage .overage-content{
+  display: block;
+  font-size: 100rpx;
+  font-weight: 700;
+  padding: 30rpx 0;
+  margin: 30rpx 0;
+}
+.overage .overage-desc{
+  border: 2rpx solid #666;
+  border-radius: 60rpx;
+  padding: 10rpx 20rpx;
+  font-size: 30rpx;
+}
+.btn-charge{
+  width: 90%;
+  margin-top: 40rpx;
+}
+.tapbar{
+  padding: 40rpx;
+  background-color: #fff;
+  margin-top: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+.my-deposit{
+  margin-top: 2rpx;
+}
+.Tcolor{
+  color: #b9dd08;
+}

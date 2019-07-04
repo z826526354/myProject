@@ -1,0 +1,19 @@
+<!--pages/scanResult/index.wxml-->
+<view class='container'>
+  <view class='password-title'>
+    <text>开锁密码</text>
+  </view>
+  <view class='password-content'>
+    <text>1234</text>
+  </view>
+  <view class='tips'>
+    请使用密码解锁，{{time}}秒后开始计费
+    <view class='tips-action'>
+      车辆有问题？
+      <p class='tips-href'>
+        回首页车辆报障
+      </p>
+    </view>
+  </view>
+</view>
+
