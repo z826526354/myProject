@@ -143,7 +143,7 @@ setInterval(() => {
 }, 1000 / 30)
 ```
 
-[示例演示](./demo (2).html) : 
+[示例演示](./demo (2).html) :   
 
 ![](./img/GIF3.gif)
 
