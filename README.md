@@ -8,6 +8,8 @@
 
 #### [git常用命令](https://github.com/z826526354/myProject/blob/master/git.md)
 
+#### [性能优化——防抖节流](https://github.com/z826526354/myProject/blob/master/jieliu/节流防抖.md)
+
 #### [node之event事件 原理探究](https://github.com/z826526354/myProject/blob/master/event.md)
 
 #### [vue](https://github.com/z826526354/myProject/tree/master/vuejs)
@@ -35,3 +37,4 @@
 #### [html](https://github.com/z826526354/myProject/tree/master/html)
 
 #### [CSS(层叠样式表)](https://github.com/z826526354/myProject/tree/master/css)
+
