@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.abled{
+			margin: 50px 0px 0px 100px;
+			width: 140px;
+			height: 170px;
+			border: 2px solid black;
+			border-radius: 3px;
+			display: inline-block;
+		}
+		ul{
+			padding: 0;
+		}
+		li{
+			list-style: none;
+			width: 100px;
+			height: 40px;
+			margin: 10px auto;
+			background-color: #2FBDDF;
+			border-radius: 5px;
+			transition: all 0.3s;
+
+		}
+		li:hover{
+			
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+		}
+		.target{
+			margin-left: 100px;
+			width: 140px;
+			height: 170px;
+			border: 2px solid black;
+			border-radius: 3px;
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<div class="abled">
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<div class="target" draggable="true"></div>
+</body>
+<!-- 
+1. 所有的标签元素，当拖拽结束时，默认事件是回到原处
+2. 事件是由行为触发的，一个行为可以不止触发一个事件
+3. ondragover ==> 回到原处 ==> 执行drop事件
+   A->B(阻止默认事件)->c（才可以执行）
+-->
+<script>
+    var dragDom;
+    var liList = document.getElementsByTagName('li');
+
+    for (var i = 0; i < liList.length; i++) {
+        liList[i].setAttribute('draggable', true);
+        liList[i].ondragstart = function (e) {
+            dragDom = e.target;
+            e.dataTransfer.effectAllowed = "move";
+            // 设置拖拽时的鼠标样式 只能在ondragstart里面使用 不常用
+        }
+    }
+    var oTarget = document.getElementsByClassName('target')[0];
+    oTarget.ondragover = function (e) {
+        e.preventDefault();
+    }
+    oTarget.ondrop = function (e) {
+        oTarget.appendChild(dragDom);
+        dragDom = null;
+    }
+    var abled = document.getElementsByClassName('abled')[0];
+    abled.ondragover = function (e) {
+        e.preventDefault();
+    }
+    abled.ondrop = function (e) {
+        abled.appendChild(dragDom);
+        dragDom = null;
+        e.dataTransfer.dropEffect = "copy";
+        // 设置拖拽放下时的鼠标样式 只能在ondrop里面使用  不常用
+    }
+    // 释放目标时触发的事件:
+	// ondragenter - 当被鼠标拖动的对象进入其容器范围内时触发此事件
+	// ondragover - 当某被拖动的对象在另一对象容器范围内拖动时触发此事件
+	// ondragleave - 当被鼠标拖动的对象离开其容器范围内时触发此事件
+	// ondrop - 在一个拖动过程中，释放鼠标键时触发此事件
+</script>
+
+</body>
+</html>
