@@ -34,7 +34,7 @@
 
   
 
-- #### [3 API](https://github.com/z826526354/myProject/blob/master/H5/API篇.md)
+- #### [3 API](https://github.com/z826526354/myProject/blob/master/H5/API.md)
 
   定位（需要地理位置的功能）
 

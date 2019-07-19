@@ -10,7 +10,7 @@ this.onmessage = function (e) {
 	var sum = e.data + num;
 	console.log(e.data + num)
 	postMessage(sum);
-	var d = add(1, 3);
-	console.log(d);
+	console.log(add(1, 3));
+
 	this.close();
 }
