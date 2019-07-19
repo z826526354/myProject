@@ -290,8 +290,6 @@ var worker = new Worker('worker.js');
 
 
 
-
-
 ### fileReader可实现的功能
 
 
