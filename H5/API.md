@@ -191,7 +191,7 @@ html5新增的方法
 
 1. `pushState`
 
-   `history.pushState(state, title, url);` 添加一条历史记录
+   `history.pushState(state, title, url);` 添加一条历史记录, 更新url路径，但是不会更新页面
 
 2. `replaceState`
 
@@ -205,11 +205,94 @@ title：新页面的标题，但是所有浏览器目前都忽略这个值，因
 
 url：新的网址，必须与当前页面在同一个域。浏览器的地址栏将显示这个网址
 
-## worker
+- history上新增的事件
 
+  1、[popstate事件](./demo3.html)
 
+  [*历史记录发生改变时触发*](https://z826526354.github.io/myProject/H5/demo3.html)
+
+  调用`history.pushState()`或者`history.replaceState()`不会触发popstate事件
+
+  2、hashchange事件
+
+  当页面hash值改变的时候触发，常用于构建单页面应用
+
+## [worker](https://z826526354.github.io/myProject/H5/demo4.html)
+
+```js
+var worker = new Worker('worker.js');
+```
+
+- worker文件必须和主文件满足同源策略
+
+- worker主要处理大量的计算
+
+### worker和主线程之间的通信
+
+- postMessage(n)方法
+
+-  message事件
+
+### 结束worker
+
+- close() 在worker作用域中调用(worker.js) —— 相当于工人辞职
+- terminate() 在worker对象上调用 ( 主进程的worker对象上 worker.terminate ) —— 相当于老板炒鱿鱼
+
+### 其他特性
+
+- `improtScripts(./math1.js, './math2.js')`
+
+  worker只是window上的子集，只能实现部分功能，不能获取到window，document，所以不要引入jquery zepto。当然想用的话可以传给子文件
+
+  可以引入一些计算类的库
+
+- 作用域 `WorkerGlobalScope`
+
+  可以继续生成worker对象（FireFox可以chrome暂时不支持）
+
+  `navigator`
+
+  `XMLHttpRequest`
+
+  `setTimeout / serInterval`
+
+- 可以用ajax轮循监听数据变化
+
+### worker的缺点
+
+- 受同源策略限制
+
+- 受到主线程DOM的限制
+
+- worker线程和主线程不在同一个上下文环境，它不能直接通信，必须通过消息完成
+
+- 脚本限制：worker线程不能执行`alert`或者`confirm`， 但是可以使用`XMLHttpRequest` 对象发出的ajax请求
+
+- 文件限制：worker线程无法读取本地文件，既不能打开本机的文件系统，他所加载的脚本必须来自网络
+
+  
 
 ## fileReader
+
+读取文件
+
+### fileReader的使用方法
+
+`abort() `终止读取
+
+`readAsBinaryString(file)`将文件读取为二进制编码
+
+`readAsDataURL(file)` 将文件读取为DataURL编码
+
+`readAsText(file, [encoding])` 将文件读取为文本
+
+`readAsArrayBuffer(file)` 将文件读取为ArrayBuffer
+
+
+
+
+
+### fileReader可实现的功能
 
 
 

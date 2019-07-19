@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class="wrapper"></div>
+	<script>
+		var worker = new Worker('./js/worker.js');
+		worker.postMessage(500);
+		console.log('aaaa');
+		worker.onmessage = function (e) {
+			console.log(e.data);
+			worker.terminate();
+			worker.postMessage(1000);
+		}
+
+
+
+
+	</script>
+</body>
+</html>

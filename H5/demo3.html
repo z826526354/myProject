@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" placeholder="123">
+	<button type="button">search</button>
+	<ul id="wrap"></ul>
+	<script>
+		var wrap = document.getElementById('wrap')
+		var inp = document.getElementsByTagName('input')[0];
+		var btn = document.getElementsByTagName('button')[0];
+		var data = [{name : '你好'}, {name : '我好'}, {name : 'hello'}, {name : 'ok'}]
+
+		renderDom(data);
+		
+		function renderDom(data) {
+			var str = '';
+			data.forEach(function (item) {
+				str += '<li>' + item.name + '</li>';
+			})
+			wrap.innerHTML = str;
+		}
+		
+		btn.onclick = function () {
+			var key = inp.value;
+			var dataList = data.filter(function (item){
+				return item.name.indexOf(key) > -1;
+			})
+			renderDom(dataList);
+			history.pushState({
+				key: key
+			}, null, '#' + key);
+		}
+
+		window.addEventListener('popstate', function(e) {
+			console.log(e.state)
+			var key = e.state ? e.state.key : '';
+			var dataList = data.filter(function (item){
+				return item.name.indexOf(key) > -1;
+			})
+			inp.value = key;
+			renderDom(dataList);
+		})
+	 	// if(!('alibaba') in window) {var alibaba = 1}
+	 	// console.log('alibaba', alibaba);
+	 	// console.log('alibaba1'.splice(2, -2));
+	 	// var str = "alibaba"
+	 	// console.log(str.length)
+	 </script>
+	 
+	</body>
+	</html>
