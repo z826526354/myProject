@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		img{
+			width: 300px;
+			height: 200px;
+			background-size: 100% 100%;
+		}
+		.progress{
+			width: 300px;
+			height: 30px;
+			border:1px solid #000000;
+			border-radius:2px;
+			transition: all 0.3s;
+		}
+		.bar{
+			width: 0;
+			height: 30px;;
+			background-color: #2570FF;
+		}
+	</style>
+</head>
+<body>
+	<input type="file">
+	<img src="" alt="">
+	<div class="progress">
+		<div class="bar"></div>
+	</div>
+	<span class="text"></span>
+	<button class="abort">停止读取</button>
+
+	<script src="./js/fileread.js"></script>
+	<script>
+		var inp = document.getElementsByTagName('input')[0];
+		var img = document.getElementsByTagName('img')[0];
+		var text = document.getElementsByClassName('text')[0];
+		var bar = document.getElementsByClassName('bar')[0];
+		var btn = document.getElementsByClassName('abort')[0];
+
+		inp.onchange = function () {
+			console.log(inp.files[0]);
+			bar.style.width = '0px';
+			var reader = new partFileReader(inp.files[0], 'readAsDataURL', {
+				loadStart: function (e) {
+					console.log('start', e);
+				},
+				progress: function (e, loaded, total) {
+					console.log('progress', e);
+					var precent = loaded / total * 100;
+					var width = Math.round(300 * precent / 100);
+					bar.style.width = width + 'px';
+					text.innerHTML = Math.round(precent) + '%';
+				},
+				load: function (e) {
+					console.log('load', e);
+				},
+				loadend: function (e) {
+					console.log('loadend', e);
+				},
+				abort: function (e) {
+					console.log('abort', e);
+				},
+			});
+		}
+		
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		html{
+			background-color: #333;
+			color: #fff;
+		}
+		.box{
+			position: relative;
+			top: 100px;
+			margin: 0 auto;
+			width: 300px;
+			height: 300px;
+		}
+		.pin{
+			position: absolute;
+			top: -50px;
+			left: 50%;
+			margin-left: -2px;
+			width: 4px;
+			height: 50px;
+			background-color: #fff;
+		}
+		.ten{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-left: -100px;
+			margin-top: -100px;
+			width: 200px;
+			height: 200px;
+		}
+		.h, .l{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: #fff;
+		}
+		.ten .h{
+			width: 2px;
+			height: 200px;
+		}
+		.ten .l{
+			width: 200px;
+			height: 2px;
+		}
+		ul{
+			width: 300px;
+			height: 300px;
+			border-radius: 50%;
+			transition: all 10ms linear;
+		}
+		li{
+			position: absolute;
+			top: 0;
+			left: 50%;
+			margin-left: -1px;
+			width: 2px;
+			height: 20px;
+			background-color: #f40;
+			transform-origin: 1px 150px;
+		}
+		span{
+			position: absolute;
+			top: -20px;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<p>
+		方向： <div id="heading">0</div>
+	</p>
+
+	<div class="box">
+		<div class="pin"></div>
+		<div class="ten">
+			<div class="l"></div>
+			<div class="h"></div>
+		</div>
+		<ul>
+			<li><span style="color: #f60"></span></li>
+			<li><span>330</span></li>
+			<li><span>300</span></li>
+			<li><span>270</span></li>
+			<li><span>240</span></li>
+			<li><span>210</span></li>
+			<li><span>180</span></li>
+			<li><span>150</span></li>
+			<li><span>120</span></li>
+			<li><span>90</span></li>
+			<li><span>60</span></li>
+			<li><span>30</span></li>
+		</ul>
+	</div>
+	<script>
+		// 阵盘渲染
+		function lineDraw() {
+			var li = document.getElementsByTagName('li');
+			var span = document.getElementsByTagName('span');
+			var len = li.length;
+			for (var i = 0; i < len; i++) {
+				li[i].style.transform = 'rotate(' + 30 * i + 'deg)'
+			}
+		}
+		lineDraw();
+
+		function move(ang) {
+			// 设备旋转的时候
+			var ul = document.getElementsByTagName('ul')[0];
+			ul.style.transform = 'rotate(' + ang + 'deg)'
+		}
+
+		function DeviceOrientationHandler(event) {
+			console.log(event.alpha);
+			var webkitCompassHeading = event.alpha;
+			if (webkitCompassHeading != null) {
+				// 判断屏幕方向
+				var head = '';
+				var headNum = Math.roynd(Math.round(webkitCompassHeading / 45) + 7) % 8;
+				switch (headNum) {
+					case 0 :
+						head = '东北';
+						break;
+					case 1 :
+						head = '东';
+						break;
+					case 2 :
+						head = '东南';
+						break;
+					case 3 :
+						head = '南';
+						break;
+					case 4 :
+						head = '西南';
+						break;
+					case 5 :
+						head = '西';
+						break;
+					case 6 :
+						head = '西北';
+						break;
+					case 7 :
+						head = '北';
+				}
+				move(webkitCompassHeading);
+				document.getElementById('heading').innerHTML = head + '   ' + Math.round(webkitCompassHeading)
+			}else {
+				document.body.innerHTML = "当前浏览器不支持DeviceOrientation"
+			}
+		}
+		if (window.DeviceOrientationEvent) {
+			window.addEventListener('deviceorientation', DeviceOrientationHandler, false)
+		}else{
+			alert('您的浏览器不支持DeviceOrientation');
+			console.log(window.DeviceOrientationEvent)
+		}
+	</script>
+</body>
+</html>

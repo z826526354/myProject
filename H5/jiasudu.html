@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class="demo"></div>
+	<script>
+		var demo = document.getElementsByClassName('demo')[0];
+		var speed = 25;
+		var lastTime = 0;
+		var lastX = 0, lastY = 0, lastZ = 0;
+		window.addEventListener('devicemotion', function (event) {
+			console.log(event);
+			demo.innerHTML = 'acceleration-X : ' + event.acceleration.x + '<br/> y : ' + event.acceleration.y + '<br/> z : ' + event.acceleration.z + '<br/> accelerationIncludingGravity-x : ' + event.accelerationIncludingGravity.x + '<br/> y : ' + event.accelerationIncludingGravity.y + '<br/> z : ' + event.accelerationIncludingGravity.z + '<br/> rotationRate-alpha : ' + event.rotationRate.alpha + '<br/> beta : ' + event.rotationRate.beta + '<br/> gamma : ' + event.rotationRate.gamma + '<br/> interval : ' + event.interval;
+
+			var x = event.acceleration.x;
+			var y = event.acceleration.y;
+			var z = event.acceleration.z;
+			var nowTime = (new Date()).getTime();
+			if (nowTime - lastTime > 500) {
+				lastTime = nowTime;
+				if(Math.abs(x - lastX) > speed || Math.abs(y - lastY) > speed || Math.abs(z - lastZ) > speed) {
+					alert('摇一摇')
+					lastX = x;
+					lastY = y;
+					lastZ = z;
+				}
+			}
+		})
+
+	 	// if(!('alibaba') in window) {var alibaba = 1}
+	 	// console.log('alibaba', alibaba);
+	 	// console.log('alibaba1'.splice(2, -2));
+	 	// var str = "alibaba"
+	 	// console.log(str.length)
+	 </script>
+	 
+	</body>
+	</html>
