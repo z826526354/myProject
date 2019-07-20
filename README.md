@@ -8,6 +8,8 @@
 
 #### [git常用命令](https://github.com/z826526354/myProject/blob/master/git.md)
 
+#### [小程序（Hybrid）](https://github.com/z826526354/myProject/tree/master/wechatApp/wechatApp.md)
+
 #### [CSS3](https://github.com/z826526354/myProject/tree/master/css3)
 
 #### [性能优化——防抖节流](https://github.com/z826526354/myProject/blob/master/jieliu/节流防抖.md)
