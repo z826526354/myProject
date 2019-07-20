@@ -8,7 +8,7 @@
 
 #### [git常用命令](https://github.com/z826526354/myProject/blob/master/git.md)
 
-#### [小程序（Hybrid）](https://github.com/z826526354/myProject/tree/master/wechatApp/wechatApp.md)
+#### [小程序（Hybrid）](https://github.com/z826526354/myProject/blob/master/WechatApp/wechatApp.md)
 
 #### [CSS3](https://github.com/z826526354/myProject/tree/master/css3)
 
@@ -81,7 +81,7 @@ gpu可以再一帧里渲染好页面，那么当你改动页面的元素或者�
 
 ## 
 
-- #### [小程序简介（Hybrid）](https://github.com/z826526354/myProject/tree/master/wechatApp/wechatApp.md)
+- #### [小程序简介（Hybrid）](https://github.com/z826526354/myProject/blob/master/WechatApp/wechatApp.md)
 
   1）限制大小在1M以内
 
