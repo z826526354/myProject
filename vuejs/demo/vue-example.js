@@ -109,6 +109,7 @@ var vm = new Vue({
 
 function hashchange() {
 	var hash = window.location.hash.slice(1);
+	console.log(hash)
 	vm.visibility = hash
 }
 hashchange();

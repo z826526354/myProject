@@ -10,3 +10,7 @@
 
 #### [vue-cli](./vue-cli.md)
 
+#### [vue-router](./vue-router.md)
+
+#### [vuex](./vuex.md)
+

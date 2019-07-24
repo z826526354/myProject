@@ -1,4 +1,16 @@
-## VUE-cli(构建工具——脚手架)
+---
+title: VUE-cli
+date: 2019-07-08 22:44:58
+tags: 
+- VUE.js
+- vue-cli
+categories: 
+- web前端
+---
+
+
+
+## Vue-cli(构建工具——脚手架)
 
 内部模板有已经给我们配置好了wepack的模板
 
@@ -15,10 +27,10 @@
   ```
 
   ```
-  npm init <template> <project-name>
+  vue init <template> <project-name>
   <项目模板><项目名字>
   
-  npm init webpack myVue
+  vue init webpack myVue
   ```
 
   通常我们用官方的webpack模板
@@ -217,6 +229,8 @@
 
   
 
-  后续更新中>>>>>
+  
 
+  后续更新中>>>>>
+  
   
