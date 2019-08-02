@@ -70,6 +70,16 @@ new Vuex.Store()
 
 - state：包含所有应用级别状态的对象
 
+  ```js
+  computed: {
+      num () {
+          return this.$store.state.count
+      }
+  }
+  ```
+
+  
+
 - getters：在组件内部获取store中状态的函数
 
 - mutations：唯一修改状态的事件回调函数
