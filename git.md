@@ -2,6 +2,13 @@
 
 ## 版本控制系统(version control system简称VCS)
 
+创建a.txt文件
+
+```
+$ vim a.txt
+```
+
+
 初始化本地仓库
 
 ```
